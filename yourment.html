@@ -1,0 +1,638 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ylandro Bury | Belgium #11</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #080808;
+  --yellow: #fddd00;
+  --red: #ed1c24;
+  --white: #ffffff;
+  --grey: #a5a5a5;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
+  color: white;
+}
+
+/* BELGIUM STRIPES */
+
+.flag-stripe {
+  height: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.flag-stripe div:nth-child(1) { background: black; }
+.flag-stripe div:nth-child(2) { background: var(--yellow); }
+.flag-stripe div:nth-child(3) { background: var(--red); }
+
+/* NAVIGATION */
+
+nav {
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #101010;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.brand span {
+  color: var(--yellow);
+}
+
+.nav-right {
+  color: var(--grey);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  padding: 75px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:
+    linear-gradient(90deg, #080808 5%, #151515 65%, #650b10 100%);
+}
+
+.hero::after {
+  content: "BELGIUM";
+  position: absolute;
+  right: -30px;
+  bottom: 10px;
+  font-size: clamp(70px, 15vw, 180px);
+  font-weight: 900;
+  color: rgba(255,255,255,.035);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.country {
+  color: var(--yellow);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+h1 {
+  font-size: clamp(55px, 9vw, 110px);
+  font-weight: 1000;
+  line-height: .88;
+  margin: 28px 0;
+  letter-spacing: -4px;
+}
+
+.position {
+  color: #ddd;
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.hero-tag {
+  margin-top: 28px;
+  display: inline-block;
+  padding: 12px 17px;
+  background: var(--yellow);
+  color: black;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.shirt-number {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(130px, 23vw, 270px);
+  font-weight: 1000;
+  line-height: 1;
+  color: var(--yellow);
+  text-shadow: 8px 8px 0 rgba(0,0,0,.3);
+}
+
+/* BELGIAN COLOR BAND */
+
+.color-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 7px;
+}
+
+.color-band div:nth-child(1) { background: black; }
+.color-band div:nth-child(2) { background: var(--yellow); }
+.color-band div:nth-child(3) { background: var(--red); }
+
+/* MAIN */
+
+main {
+  max-width: 1250px;
+  margin: auto;
+  padding: 55px 6%;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+  font-size: 23px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.section-header::before {
+  content: "";
+  height: 27px;
+  width: 7px;
+  background: var(--yellow);
+}
+
+.section-header span {
+  color: var(--red);
+}
+
+/* PLAYER INFO */
+
+.player-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 55px;
+}
+
+.info-card {
+  background: #161616;
+  border-top: 3px solid var(--yellow);
+  padding: 22px;
+}
+
+.info-card strong {
+  display: block;
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.info-card small {
+  color: var(--grey);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* STATS */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+  margin-bottom: 55px;
+}
+
+.stat-card {
+  background: linear-gradient(145deg,#1d1d1d,#101010);
+  padding: 25px 20px;
+  border-left: 3px solid var(--red);
+}
+
+.stat-card strong {
+  display: block;
+  color: var(--yellow);
+  font-size: 33px;
+  font-weight: 900;
+}
+
+.stat-card p {
+  color: var(--grey);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  margin-top: 8px;
+}
+
+/* SKILLS */
+
+.skill-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 55px;
+}
+
+.skill-panel {
+  background: #151515;
+  padding: 28px;
+  border-top: 3px solid var(--yellow);
+}
+
+.skill-panel h3 {
+  margin-bottom: 25px;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.skill {
+  margin: 22px 0;
+}
+
+.skill-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.skill-title b {
+  color: var(--yellow);
+}
+
+.bar {
+  background: #333;
+  height: 7px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg,var(--yellow),var(--red));
+}
+
+/* PLAYING STYLE */
+
+.style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 55px;
+}
+
+.style-card {
+  padding: 30px;
+  background: #171717;
+  border-bottom: 4px solid var(--red);
+}
+
+.style-card:first-child {
+  border-bottom-color: var(--yellow);
+}
+
+.style-card h3 {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.style-card p {
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.style-label {
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 13px;
+}
+
+/* SCOUT REPORT */
+
+.report {
+  padding: 32px;
+  background: #151515;
+  border-left: 5px solid var(--yellow);
+  margin-bottom: 45px;
+}
+
+.report p {
+  color: #bbb;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.final-banner {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(100deg,#111,#3e090c,#111);
+  border-top: 4px solid var(--yellow);
+  border-bottom: 4px solid var(--red);
+}
+
+.final-banner h2 {
+  font-size: clamp(25px,5vw,43px);
+  font-weight: 900;
+}
+
+.final-banner p {
+  color: var(--yellow);
+  margin-top: 12px;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px;
+  text-align: center;
+  background: #080808;
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+footer span {
+  color: var(--yellow);
+}
+
+@media(max-width:700px) {
+  .hero {
+    min-height: 430px;
+    padding: 55px 7%;
+  }
+
+  .shirt-number {
+    font-size: 110px;
+  }
+
+  .player-info,
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-columns,
+  .style-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="flag-stripe">
+  <div></div><div></div><div></div>
+</div>
+
+<nav>
+  <div class="brand">BELGIUM<span> FC</span></div>
+  <div class="nav-right">PLAYER SCOUTING · 2026</div>
+</nav>
+
+<section class="hero">
+
+  <div class="hero-content">
+    <div class="country">🇧🇪 BELGIAN FOOTBALL PROSPECT</div>
+
+    <h1>YLANDRO<br>BURY</h1>
+
+    <p class="position">LEFT WINGER · RIGHT FOOTED</p>
+
+    <div class="hero-tag">
+      PLAYER NUMBER 11
+    </div>
+  </div>
+
+  <div class="shirt-number">11</div>
+
+</section>
+
+<div class="color-band">
+  <div></div><div></div><div></div>
+</div>
+
+<main>
+
+  <div class="section-header">
+    PLAYER <span>IDENTITY</span>
+  </div>
+
+  <div class="player-info">
+    <div class="info-card">
+      <strong>13</strong>
+      <small>AGE</small>
+    </div>
+
+    <div class="info-card">
+      <strong>LW</strong>
+      <small>POSITION</small>
+    </div>
+
+    <div class="info-card">
+      <strong>RIGHT</strong>
+      <small>FOOT</small>
+    </div>
+
+    <div class="info-card">
+      <strong>STREET</strong>
+      <small>BACKGROUND</small>
+    </div>
+  </div>
+
+  <div class="section-header">
+    PLAYER <span>STATISTICS</span>
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <strong>20–25.4</strong>
+      <p>RECORDED SPEED · KM/H</p>
+    </div>
+
+    <div class="stat-card">
+      <strong>58%</strong>
+      <p>DRIBBLE SUCCESS</p>
+    </div>
+
+    <div class="stat-card">
+      <strong>20M</strong>
+      <p>CURVED PASS RANGE</p>
+    </div>
+
+    <div class="stat-card">
+      <strong>GOOD</strong>
+      <p>PHYSICAL STRENGTH</p>
+    </div>
+
+  </div>
+
+  <div class="section-header">
+    PLAYER <span>ATTRIBUTES</span>
+  </div>
+
+  <div class="skill-columns">
+
+    <div class="skill-panel">
+      <h3>TECHNICAL ABILITIES</h3>
+
+      <div class="skill">
+        <div class="skill-title">
+          <span>Close Ball Control</span>
+          <b>Hazard Style</b>
+        </div>
+        <div class="bar">
+          <div class="fill" style="width:85%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-title">
+          <span>Dribbling</span>
+          <b>58% success</b>
+        </div>
+        <div class="bar">
+          <div class="fill" style="width:58%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-title">
+          <span>Shooting</span>
+          <b>Good</b>
+        </div>
+        <div class="bar">
+          <div class="fill" style="width:76%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-title">
+          <span>Passing</span>
+          <b>Good</b>
+        </div>
+        <div class="bar">
+          <div class="fill" style="width:80%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-panel">
+      <h3>PHYSICAL ABILITIES</h3>
+
+      <div class="skill">
+        <div class="skill-title">
+          <span>Speed</span>
+          <b>Doku Style</b>
+        </div>
+        <div class="bar">
+          <div class="fill" style="width:90%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-title">
+          <span>Strength</span>
+          <b>Good</b>
+        </div>
+        <div class="bar">
+          <div class="fill" style="width:80%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-title">
+          <span>Defending</span>
+          <b>Pretty Good</b>
+        </div>
+        <div class="bar">
+          <div class="fill" style="width:75%"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-header">
+    PLAYING <span>IDENTITY</span>
+  </div>
+
+  <div class="style-grid">
+
+    <div class="style-card">
+      <div class="style-label">SPEED & EXPLOSIVENESS</div>
+      <h3>⚡ DOKU DNA</h3>
+      <p>
+        Fast attacking movement, acceleration and
+        the ability to challenge defenders in one-on-one
+        situations. A direct and aggressive winger style.
+      </p>
+    </div>
+
+    <div class="style-card">
+      <div class="style-label">TECHNIQUE & CONTROL</div>
+      <h3>🎩 HAZARD DNA</h3>
+      <p>
+        Close ball control, tight touches and creativity
+        in small spaces. A technical style focused on
+        keeping possession while moving past defenders.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="section-header">
+    SCOUT <span>REPORT</span>
+  </div>
+
+  <div class="report">
+    <p>
+      Ylandro Bury is a 13-year-old right-footed left winger
+      from Belgium with a street football background.
+
+      His playing identity is inspired by two Belgian
+      football stars: Jérémy Doku and Eden Hazard.
+
+      His recorded speed reaches 25.4 km/h, with a
+      58% dribble success rate. He also demonstrates
+      good shooting, passing, physical strength and
+      defensive contribution.
+
+      His profile combines explosive movement with
+      close ball control, making him an interesting
+      young attacking prospect to develop.
+    </p>
+  </div>
+
+  <div class="final-banner">
+    <h2>MADE IN BELGIUM 🇧🇪</h2>
+    <p>YLANDRO BURY · NUMBER 11 · LEFT WINGER</p>
+  </div>
+
+</main>
+
+<footer>
+  BELGIUM <span>FC</span> · YLANDRO BURY · PLAYER PROFILE · 2026
+</footer>
+
+</body>
+</html>
